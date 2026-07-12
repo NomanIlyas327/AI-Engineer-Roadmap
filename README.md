@@ -17,6 +17,7 @@ BSCS graduate — 3 month AI Engineer roadmap follow kar raha hoon.
 | Day 7 | Week 1 Capstone — Pakistan Ecommerce BI Report | ✅ |
 | Day 7 | Week 1 Capstone — Pakistan Ecommerce BI Report | ✅ |
 | Day 8 | Machine Learning — Linear Regression basics | ✅ |
+| Day 9 | Pakistan Property Price Predictor — ML Model | ✅ |
 
 ## Tools Used
 Python | Pandas | NumPy | Matplotlib | VS Code | Jupyter
@@ -31,6 +32,9 @@ Python | Pandas | NumPy | Matplotlib | VS Code | Jupyter
   filtering, status breakdown, revenue by category 
 - **Pakistan Ecommerce Dashboard** — 4 charts ek saath, subplots, pie/bar/line charts
 - - **Ghar Price Predictor** — Linear Regression, train/test split, predictions
+## Week 2 !
 - **Dukan Sales Predictor** — ML model khud se banaya
 - **Pakistan Ecommerce BI Report** — 50,000 orders, 
   4 charts dashboard, business insights, summary report
+  - **Pakistan Property Price Predictor** — 3 features, 
+  Linear Regression, RMSE, real predictions
