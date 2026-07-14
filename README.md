@@ -18,6 +18,7 @@ BSCS graduate — 3 month AI Engineer roadmap follow kar raha hoon.
 | Day 7 | Week 1 Capstone — Pakistan Ecommerce BI Report | ✅ |
 | Day 8 | Machine Learning — Linear Regression basics | ✅ |
 | Day 9 | Pakistan Property Price Predictor — ML Model | ✅ |
+| Day 10 | Logistic Regression — Order Completion Predictor | ✅ |
 
 ## Tools Used
 Python | Pandas | NumPy | Matplotlib | VS Code | Jupyter
