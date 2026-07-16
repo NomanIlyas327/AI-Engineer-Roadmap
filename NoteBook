@@ -258,3 +258,32 @@ New-Item file.ipynb -ItemType File  # Windows
 
 ---
 
+
+
+
+Step 1: IMPORT
+        Libraries load karo
+
+Step 2: DATA
+        Dictionary banao → DataFrame banao
+
+Step 3: EXPLORE
+        shape, head, describe, isnull
+
+Step 4: CLEAN
+        Missing values fix karo
+
+Step 5: SPLIT
+        X aur y banao
+        train_test_split karo
+
+Step 6: TRAIN
+        model = Algorithm()
+        model.fit(X_train, y_train)
+
+Step 7: PREDICT
+        y_pred = model.predict(X_test)
+
+Step 8: EVALUATE
+        Numbers → RMSE
+        Yes/No  → Accuracy + Confusion Matrix
