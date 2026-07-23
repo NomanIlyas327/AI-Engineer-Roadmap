@@ -287,3 +287,17 @@ Step 7: PREDICT
 Step 8: EVALUATE
         Numbers → RMSE
         Yes/No  → Accuracy + Confusion Matrix
+
+
+
+Rivision:
+Linear Regression = Number Predict
+Logistic Reression = Yes\No Predict
+Decision tree = Sawaal puch k decide
+Random Forest = 100 Trees vote krtay hain
+RMSE = Average error (numbers)
+Accuracy = % sahi(Yes\No)
+Precision = Alarm sahi tha?
+Recall = Sab pakde?
+Overfitting = Ratta maar liya
+Cross validation = 5 baar test karo

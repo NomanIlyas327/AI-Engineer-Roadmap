@@ -20,6 +20,7 @@ BSCS graduate — 3 month AI Engineer roadmap follow kar raha hoon.
 | Day 9 | Pakistan Property Price Predictor — ML Model | ✅ |
 | Day 10 | Logistic Regression — Order Completion Predictor | ✅ |
 | Day 11 | Decision Tree — Customer Churn Predictor | ✅ |
+| Day 12 | Random Forest — Customer Churn Predictor | ✅ |
 
 ## Tools Used
 Python | Pandas | NumPy | Matplotlib | VS Code | Jupyter
@@ -40,3 +41,5 @@ Python | Pandas | NumPy | Matplotlib | VS Code | Jupyter
   4 charts dashboard, business insights, summary report
   - **Pakistan Property Price Predictor** — 3 features, 
   Linear Regression, RMSE, real predictions
+- **Customer Churn Predictor** — Random Forest, 
+  100 trees, Feature Importance, 3 customers predicted
