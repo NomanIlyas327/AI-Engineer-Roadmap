@@ -26,6 +26,7 @@ df = pd.read_csv('file.csv', encoding='latin-1', nrows=50000)
 df = pd.read_csv(r'E:\folder\file.csv', usecols=['col1', 'col2'])
 ```
 
+
 ---
 
 ### 3. DATA EXPLORE
@@ -301,3 +302,41 @@ Precision = Alarm sahi tha?
 Recall = Sab pakde?
 Overfitting = Ratta maar liya
 Cross validation = 5 baar test karo
+
+
+
+# Seed set taake sab ke paas same random numbers aayein
+np.random.seed(42)
+n = 200 # 200 employees ka data
+
+# 1. NumPy se Fake Columns Banayein
+satisfaction = np.random.uniform(0.1, 1.0, n)            # 0.1 se 1.0 ke beech floats
+monthly_hours = np.random.randint(90, 300, n)            # 90 se 300 hours
+projects = np.random.randint(1, 10, n)                   # 1 se 10 projects
+dept = np.random.choice(['Sales', 'IT', 'HR'], n) 
+
+Seaborn as sns
+sns.heatmap(...): Data ke numbers ko color-coded grid mein dikhata hai (jaise correlation dekhne ke liye).
+
+sns.countplot(...): Items ki ginti (count) ko bars ki shakal mein dikhata hai.
+
+sns.scatterplot(...): Dots ke zariye 2 variables ka relationship dikhata hai.
+
+sns.boxplot(...): Data ke outliers (galt values) pakadne ke liye kaam aata hai.
+
+
+
+day 15
+Deep Learning basic formula .
+Input data > Guess (Prediction) > Mistake check(Loss) , Fix Weights (Learning).
+Guess : Model Tukka lgata hh (model(X)).
+Mistake : Dekhta hh kitni Galtii hoii (loss = criterian (prediction, y)).
+Fix : Apni galti say seekhna (loss.backward() + optimizer.Step())
+
+Pytorch 
+Step 1: DATA SETUP  ──►  Step 2: ARCHITECTURE  ──►  Step 3: SETUP RULES  ──►  Step 4: TRAINING LOOP  ──►  Step 5: PREDICT
+(Numpy to Tensors)     (Model Class / Layers)      (Loss & Optimizer)       (Guess -> Galti -> Fix)      (Check Result)
+
+
+
+
