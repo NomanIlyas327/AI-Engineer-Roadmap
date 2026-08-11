@@ -21,6 +21,9 @@ BSCS graduate — 3 month AI Engineer roadmap follow kar raha hoon.
 | Day 10 | Logistic Regression — Order Completion Predictor | ✅ |
 | Day 11 | Decision Tree — Customer Churn Predictor | ✅ |
 | Day 12 | Random Forest — Customer Churn Predictor | ✅ |
+| Day 13 | Model Evaluation — Cross Validation, Precision, Recall, F1 | ✅ |
+| Day 14 | Week 2 Capstone — Ecommerce Order Success Predictor | ✅ |
+| Day 15 | Neural Networks — PyTorch — Loan Predictor | ✅ |
 
 ## Tools Used
 Python | Pandas | NumPy | Matplotlib | VS Code | Jupyter
@@ -43,3 +46,6 @@ Python | Pandas | NumPy | Matplotlib | VS Code | Jupyter
   Linear Regression, RMSE, real predictions
 - **Customer Churn Predictor** — Random Forest, 
   100 trees, Feature Importance, 3 customers predicted
+- **Ecommerce Order Predictor** — Random Forest, Cross Validation, Feature Importance
+## Week 3 !
+- **Loan Approval Predictor** — PyTorch Neural Network, BCELoss, Adam Optimizer
