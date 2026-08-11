@@ -1,341 +1,341 @@
----
-
-## COMPLETE AI ENGINEER CHEAT SHEET
-### Week 1 + Week 2
-
----
-
-### 1. SETUP
-```python
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Machine Learning
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression, LogisticRegression
-from sklearn.metrics import mean_squared_error, accuracy_score, confusion_matrix
-```
-
----
-
-### 2. DATA LOAD
-```python
-df = pd.read_csv('file.csv')
-df = pd.read_csv('file.csv', encoding='latin-1', nrows=50000)
-df = pd.read_csv(r'E:\folder\file.csv', usecols=['col1', 'col2'])
-```
-
-
----
-
-### 3. DATA EXPLORE
-```python
-df.shape           # rows, columns
-df.head()          # pehli 5 rows
-df.columns         # column names
-df.dtypes          # data types
-df.describe()      # basic statistics
-df.isnull().sum()  # missing values
-```
-
----
-
-### 4. DATA CLEAN
-```python
-df['col'].fillna(df['col'].mean())    # number fix
-df['col'].fillna('Unknown')           # text fix
-df.drop('col', axis=1)               # column hatao
-```
-
----
-
-### 5. FILTER
-```python
-df[df['col'] == 'value']             # equal
-df[df['col'] > 1000]                 # greater than
-df[df['col'] != 'value']             # not equal
-
-# Do conditions
-df[(df['col1'] == 'X') & (df['col2'] > 5)]   # AND
-df[(df['col1'] == 'X') | (df['col2'] > 5)]   # OR
-```
-
----
-
-### 6. COLUMNS
-```python
-df['col']                        # ek column
-df[['col1', 'col2']]            # multiple columns
-df['new'] = df['a'] * df['b']   # naya column
-```
-
----
-
-### 7. CALCULATIONS
-```python
-df['col'].sum()     # total
-df['col'].mean()    # average
-df['col'].max()     # max
-df['col'].min()     # min
-df['col'].count()   # count
-df['col'].median()  # middle value
-```
-
----
-
-### 8. SORTING
-```python
-df.sort_values('col')                   # ascending
-df.sort_values('col', ascending=False)  # descending
-```
-
----
-
-### 9. GROUPBY
-```python
-df.groupby('col')['col2'].sum()
-df.groupby('col')['col2'].mean()
-df.groupby('col')['col2'].count()
-
-# Multiple calculations
-df.groupby('col').agg(
-    naam1=('col2', 'sum'),
-    naam2=('col2', 'mean'),
-    naam3=('col2', 'count')
-)
-```
-
----
-
-### 10. VALUE COUNTS
-```python
-df['col'].value_counts()        # count
-df['col'].value_counts().head() # top 5
-```
-
----
-
-### 11. NUMPY
-```python
-arr = np.array([1, 2, 3])
-np.mean(arr)   # average
-np.max(arr)    # max
-np.min(arr)    # min
-np.sum(arr)    # total
-np.std(arr)    # standard deviation
-np.sqrt(x)     # square root
-```
-
----
-
-### 12. MATPLOTLIB
-```python
-# Line chart
-plt.plot(x, y, color='red', linewidth=2, marker='o')
-
-# Bar chart
-plt.bar(x, y, color='blue')
-
-# Horizontal bar
-plt.barh(x, y, color='orange')
-
-# Pie chart
-plt.pie(values, labels=labels, autopct='%1.1f%%')
-
-# Scatter plot
-plt.scatter(x, y, color='blue', s=100)
-
-# Histogram
-plt.hist(df['col'], bins=30)
-
-# Har chart ke baad
-plt.title('Title')
-plt.xlabel('X')
-plt.ylabel('Y')
-plt.legend()
-plt.tight_layout()
-plt.show()
-plt.savefig('chart.png', dpi=150)
-```
-
----
-
-### 13. SUBPLOTS
-```python
-fig, axes = plt.subplots(2, 2, figsize=(14, 10))
-
-axes[0,0].bar(x, y)         # top left
-axes[0,1].pie(v, labels=l)  # top right
-axes[1,0].plot(x, y)        # bottom left
-axes[1,1].barh(x, y)        # bottom right
-
-plt.tight_layout()
-plt.show()
-```
-
----
-
-### 14. LINEAR REGRESSION
-```python
-# Kab use karein: Number predict karna
-# Jaise: price, marks, sales
-
-X = df[['col1', 'col2']]  # input (features)
-y = df['target']           # output (predict karna)
-
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42)
-
-model = LinearRegression()
-model.fit(X_train, y_train)      # train
-y_pred = model.predict(X_test)   # predict
+# ---
+
+# ## COMPLETE AI ENGINEER CHEAT SHEET
+# ### Week 1 + Week 2
+
+# ---
+
+# ### 1. SETUP
+# ```python
+# import pandas as pd
+# import numpy as np
+# import matplotlib.pyplot as plt
+
+# # Machine Learning
+# from sklearn.model_selection import train_test_split
+# from sklearn.linear_model import LinearRegression, LogisticRegression
+# from sklearn.metrics import mean_squared_error, accuracy_score, confusion_matrix
+# ```
+
+# ---
+
+# ### 2. DATA LOAD
+# ```python
+# df = pd.read_csv('file.csv')
+# df = pd.read_csv('file.csv', encoding='latin-1', nrows=50000)
+# df = pd.read_csv(r'E:\folder\file.csv', usecols=['col1', 'col2'])
+# ```
+
+
+# ---
+
+# ### 3. DATA EXPLORE
+# ```python
+# df.shape           # rows, columns
+# df.head()          # pehli 5 rows
+# df.columns         # column names
+# df.dtypes          # data types
+# df.describe()      # basic statistics
+# df.isnull().sum()  # missing values
+# ```
+
+# ---
+
+# ### 4. DATA CLEAN
+# ```python
+# df['col'].fillna(df['col'].mean())    # number fix
+# df['col'].fillna('Unknown')           # text fix
+# df.drop('col', axis=1)               # column hatao
+# ```
+
+# ---
+
+# ### 5. FILTER
+# ```python
+# df[df['col'] == 'value']             # equal
+# df[df['col'] > 1000]                 # greater than
+# df[df['col'] != 'value']             # not equal
+
+# # Do conditions
+# df[(df['col1'] == 'X') & (df['col2'] > 5)]   # AND
+# df[(df['col1'] == 'X') | (df['col2'] > 5)]   # OR
+# ```
+
+# ---
+
+# ### 6. COLUMNS
+# ```python
+# df['col']                        # ek column
+# df[['col1', 'col2']]            # multiple columns
+# df['new'] = df['a'] * df['b']   # naya column
+# ```
+
+# ---
+
+# ### 7. CALCULATIONS
+# ```python
+# df['col'].sum()     # total
+# df['col'].mean()    # average
+# df['col'].max()     # max
+# df['col'].min()     # min
+# df['col'].count()   # count
+# df['col'].median()  # middle value
+# ```
+
+# ---
+
+# ### 8. SORTING
+# ```python
+# df.sort_values('col')                   # ascending
+# df.sort_values('col', ascending=False)  # descending
+# ```
+
+# ---
+
+# ### 9. GROUPBY
+# ```python
+# df.groupby('col')['col2'].sum()
+# df.groupby('col')['col2'].mean()
+# df.groupby('col')['col2'].count()
+
+# # Multiple calculations
+# df.groupby('col').agg(
+#     naam1=('col2', 'sum'),
+#     naam2=('col2', 'mean'),
+#     naam3=('col2', 'count')
+# )
+# ```
+
+# ---
+
+# ### 10. VALUE COUNTS
+# ```python
+# df['col'].value_counts()        # count
+# df['col'].value_counts().head() # top 5
+# ```
+
+# ---
+
+# ### 11. NUMPY
+# ```python
+# arr = np.array([1, 2, 3])
+# np.mean(arr)   # average
+# np.max(arr)    # max
+# np.min(arr)    # min
+# np.sum(arr)    # total
+# np.std(arr)    # standard deviation
+# np.sqrt(x)     # square root
+# ```
+
+# ---
+
+# ### 12. MATPLOTLIB
+# ```python
+# # Line chart
+# plt.plot(x, y, color='red', linewidth=2, marker='o')
+
+# # Bar chart
+# plt.bar(x, y, color='blue')
+
+# # Horizontal bar
+# plt.barh(x, y, color='orange')
+
+# # Pie chart
+# plt.pie(values, labels=labels, autopct='%1.1f%%')
+
+# # Scatter plot
+# plt.scatter(x, y, color='blue', s=100)
+
+# # Histogram
+# plt.hist(df['col'], bins=30)
+
+# # Har chart ke baad
+# plt.title('Title')
+# plt.xlabel('X')
+# plt.ylabel('Y')
+# plt.legend()
+# plt.tight_layout()
+# plt.show()
+# plt.savefig('chart.png', dpi=150)
+# ```
+
+# ---
+
+# ### 13. SUBPLOTS
+# ```python
+# fig, axes = plt.subplots(2, 2, figsize=(14, 10))
+
+# axes[0,0].bar(x, y)         # top left
+# axes[0,1].pie(v, labels=l)  # top right
+# axes[1,0].plot(x, y)        # bottom left
+# axes[1,1].barh(x, y)        # bottom right
+
+# plt.tight_layout()
+# plt.show()
+# ```
+
+# ---
+
+# ### 14. LINEAR REGRESSION
+# ```python
+# # Kab use karein: Number predict karna
+# # Jaise: price, marks, sales
+
+# X = df[['col1', 'col2']]  # input (features)
+# y = df['target']           # output (predict karna)
+
+# X_train, X_test, y_train, y_test = train_test_split(
+#     X, y, test_size=0.2, random_state=42)
+
+# model = LinearRegression()
+# model.fit(X_train, y_train)      # train
+# y_pred = model.predict(X_test)   # predict
 
-rmse = np.sqrt(mean_squared_error(y_test, y_pred))
-print(f"RMSE: {rmse:.2f}")
-```
+# rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+# print(f"RMSE: {rmse:.2f}")
+# ```
 
----
-
-### 15. LOGISTIC REGRESSION
-```python
-# Kab use karein: Yes/No predict karna
-# Jaise: complete/cancel, spam/not spam
-
-model = LogisticRegression()
-model.fit(X_train, y_train)
-y_pred = model.predict(X_test)
+# ---
+
+# ### 15. LOGISTIC REGRESSION
+# ```python
+# # Kab use karein: Yes/No predict karna
+# # Jaise: complete/cancel, spam/not spam
+
+# model = LogisticRegression()
+# model.fit(X_train, y_train)
+# y_pred = model.predict(X_test)
 
-accuracy = accuracy_score(y_test, y_pred)
-print(f"Accuracy: {accuracy * 100:.1f}%")
-
-cm = confusion_matrix(y_test, y_pred)
-print(cm)
-```
-
----
-
-### 16. CONCEPTS YAAD RAKHO
-
-```
-Linear Regression   = Number predict karna
-Logistic Regression = Yes/No predict karna
-Train               = Model ko sikhana (80%)
-Test                = Model ka exam (20%)
-RMSE                = Average error (numbers)
-Accuracy            = % sahi predictions (Yes/No)
-Confusion Matrix    = Sahi/Galat table
-X                   = Input (features)
-y                   = Output (target)
-model.fit()         = Train karo
-model.predict()     = Predict karo
-random_state=42     = Har baar same split
-```
+# accuracy = accuracy_score(y_test, y_pred)
+# print(f"Accuracy: {accuracy * 100:.1f}%")
+
+# cm = confusion_matrix(y_test, y_pred)
+# print(cm)
+# ```
+
+# ---
+
+# ### 16. CONCEPTS YAAD RAKHO
+
+# ```
+# Linear Regression   = Number predict karna
+# Logistic Regression = Yes/No predict karna
+# Train               = Model ko sikhana (80%)
+# Test                = Model ka exam (20%)
+# RMSE                = Average error (numbers)
+# Accuracy            = % sahi predictions (Yes/No)
+# Confusion Matrix    = Sahi/Galat table
+# X                   = Input (features)
+# y                   = Output (target)
+# model.fit()         = Train karo
+# model.predict()     = Predict karo
+# random_state=42     = Har baar same split
+# ```
 
----
+# ---
 
-### 17. GITHUB COMMANDS
-```bash
-git add .
-git commit -m "message"
-git push
-New-Item file.ipynb -ItemType File  # Windows
-```
+# ### 17. GITHUB COMMANDS
+# ```bash
+# git add .
+# git commit -m "message"
+# git push
+# New-Item file.ipynb -ItemType File  # Windows
+# ```
 
----
+# ---
 
-### 18. FLOW — HAR PROJECT MEIN
-```
-1. Import libraries
-2. Load data
-3. Explore (shape, head, describe)
-4. Clean (missing values)
-5. Analyze (groupby, filter)
-6. Visualize (charts)
-7. ML Model (fit, predict)
-8. Evaluate (RMSE ya Accuracy)
-9. GitHub push
-```
+# ### 18. FLOW — HAR PROJECT MEIN
+# ```
+# 1. Import libraries
+# 2. Load data
+# 3. Explore (shape, head, describe)
+# 4. Clean (missing values)
+# 5. Analyze (groupby, filter)
+# 6. Visualize (charts)
+# 7. ML Model (fit, predict)
+# 8. Evaluate (RMSE ya Accuracy)
+# 9. GitHub push
+# ```
 
----
+# ---
 
 
 
 
-Step 1: IMPORT
-        Libraries load karo
+# Step 1: IMPORT
+#         Libraries load karo
 
-Step 2: DATA
-        Dictionary banao → DataFrame banao
+# Step 2: DATA
+#         Dictionary banao → DataFrame banao
 
-Step 3: EXPLORE
-        shape, head, describe, isnull
+# Step 3: EXPLORE
+#         shape, head, describe, isnull
 
-Step 4: CLEAN
-        Missing values fix karo
+# Step 4: CLEAN
+#         Missing values fix karo
 
-Step 5: SPLIT
-        X aur y banao
-        train_test_split karo
+# Step 5: SPLIT
+#         X aur y banao
+#         train_test_split karo
 
-Step 6: TRAIN
-        model = Algorithm()
-        model.fit(X_train, y_train)
+# Step 6: TRAIN
+#         model = Algorithm()
+#         model.fit(X_train, y_train)
 
-Step 7: PREDICT
-        y_pred = model.predict(X_test)
+# Step 7: PREDICT
+#         y_pred = model.predict(X_test)
 
-Step 8: EVALUATE
-        Numbers → RMSE
-        Yes/No  → Accuracy + Confusion Matrix
+# Step 8: EVALUATE
+#         Numbers → RMSE
+#         Yes/No  → Accuracy + Confusion Matrix
 
 
 
-Rivision:
-Linear Regression = Number Predict
-Logistic Reression = Yes\No Predict
-Decision tree = Sawaal puch k decide
-Random Forest = 100 Trees vote krtay hain
-RMSE = Average error (numbers)
-Accuracy = % sahi(Yes\No)
-Precision = Alarm sahi tha?
-Recall = Sab pakde?
-Overfitting = Ratta maar liya
-Cross validation = 5 baar test karo
+# Rivision:
+# Linear Regression = Number Predict
+# Logistic Reression = Yes\No Predict
+# Decision tree = Sawaal puch k decide
+# Random Forest = 100 Trees vote krtay hain
+# RMSE = Average error (numbers)
+# Accuracy = % sahi(Yes\No)
+# Precision = Alarm sahi tha?
+# Recall = Sab pakde?
+# Overfitting = Ratta maar liya
+# Cross validation = 5 baar test karo
 
 
 
-# Seed set taake sab ke paas same random numbers aayein
-np.random.seed(42)
-n = 200 # 200 employees ka data
+# # Seed set taake sab ke paas same random numbers aayein
+# np.random.seed(42)
+# n = 200 # 200 employees ka data
 
-# 1. NumPy se Fake Columns Banayein
-satisfaction = np.random.uniform(0.1, 1.0, n)            # 0.1 se 1.0 ke beech floats
-monthly_hours = np.random.randint(90, 300, n)            # 90 se 300 hours
-projects = np.random.randint(1, 10, n)                   # 1 se 10 projects
-dept = np.random.choice(['Sales', 'IT', 'HR'], n) 
+# # 1. NumPy se Fake Columns Banayein
+# satisfaction = np.random.uniform(0.1, 1.0, n)            # 0.1 se 1.0 ke beech floats
+# monthly_hours = np.random.randint(90, 300, n)            # 90 se 300 hours
+# projects = np.random.randint(1, 10, n)                   # 1 se 10 projects
+# dept = np.random.choice(['Sales', 'IT', 'HR'], n) 
 
-Seaborn as sns
-sns.heatmap(...): Data ke numbers ko color-coded grid mein dikhata hai (jaise correlation dekhne ke liye).
+# Seaborn as sns
+# sns.heatmap(...): Data ke numbers ko color-coded grid mein dikhata hai (jaise correlation dekhne ke liye).
 
-sns.countplot(...): Items ki ginti (count) ko bars ki shakal mein dikhata hai.
+# sns.countplot(...): Items ki ginti (count) ko bars ki shakal mein dikhata hai.
 
-sns.scatterplot(...): Dots ke zariye 2 variables ka relationship dikhata hai.
+# sns.scatterplot(...): Dots ke zariye 2 variables ka relationship dikhata hai.
 
-sns.boxplot(...): Data ke outliers (galt values) pakadne ke liye kaam aata hai.
+# sns.boxplot(...): Data ke outliers (galt values) pakadne ke liye kaam aata hai.
 
 
 
-day 15
-Deep Learning basic formula .
-Input data > Guess (Prediction) > Mistake check(Loss) , Fix Weights (Learning).
-Guess : Model Tukka lgata hh (model(X)).
-Mistake : Dekhta hh kitni Galtii hoii (loss = criterian (prediction, y)).
-Fix : Apni galti say seekhna (loss.backward() + optimizer.Step())
+# day 15
+# Deep Learning basic formula .
+# Input data > Guess (Prediction) > Mistake check(Loss) , Fix Weights (Learning).
+# Guess : Model Tukka lgata hh (model(X)).
+# Mistake : Dekhta hh kitni Galtii hoii (loss = criterian (prediction, y)).
+# Fix : Apni galti say seekhna (loss.backward() + optimizer.Step())
 
-Pytorch 
-Step 1: DATA SETUP  ──►  Step 2: ARCHITECTURE  ──►  Step 3: SETUP RULES  ──►  Step 4: TRAINING LOOP  ──►  Step 5: PREDICT
-(Numpy to Tensors)     (Model Class / Layers)      (Loss & Optimizer)       (Guess -> Galti -> Fix)      (Check Result)
+# Pytorch 
+# Step 1: DATA SETUP  ──►  Step 2: ARCHITECTURE  ──►  Step 3: SETUP RULES  ──►  Step 4: TRAINING LOOP  ──►  Step 5: PREDICT
+# (Numpy to Tensors)     (Model Class / Layers)      (Loss & Optimizer)       (Guess -> Galti -> Fix)      (Check Result)
 
 
 
