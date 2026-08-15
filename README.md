@@ -24,6 +24,7 @@ BSCS graduate — 3 month AI Engineer roadmap follow kar raha hoon.
 | Day 13 | Model Evaluation — Cross Validation, Precision, Recall, F1 | ✅ |
 | Day 14 | Week 2 Capstone — Ecommerce Order Success Predictor | ✅ |
 | Day 15 | Neural Networks — PyTorch — Loan Predictor | ✅ |
+| Day 16 | Neural Network Training — Loss Curves, Epochs Tuning | ✅ |
 
 ## Tools Used
 Python | Pandas | NumPy | Matplotlib | VS Code | Jupyter
