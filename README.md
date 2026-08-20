@@ -25,6 +25,8 @@ BSCS graduate — 3 month AI Engineer roadmap follow kar raha hoon.
 | Day 14 | Week 2 Capstone — Ecommerce Order Success Predictor | ✅ |
 | Day 15 | Neural Networks — PyTorch — Loan Predictor | ✅ |
 | Day 16 | Neural Network Training — Loss Curves, Epochs Tuning | ✅ |
+| Day 17 | LLM API — Groq + LLaMA — Ecommerce Chatbot | ✅ |
+| Day 18 | RAG — PakShop Knowledge Base Chatbot | ✅ |
 
 ## Tools Used
 Python | Pandas | NumPy | Matplotlib | VS Code | Jupyter
@@ -50,3 +52,5 @@ Python | Pandas | NumPy | Matplotlib | VS Code | Jupyter
 - **Ecommerce Order Predictor** — Random Forest, Cross Validation, Feature Importance
 ## Week 3 !
 - **Loan Approval Predictor** — PyTorch Neural Network, BCELoss, Adam Optimizer
+- **Pakistan Ecommerce Chatbot** — Groq API, LLaMA 3.1, Multi-turn conversation
+- **PakShop RAG Chatbot** — Custom knowledge base, Urdu responses, Out-of-scope handling
