@@ -27,6 +27,8 @@ BSCS graduate — 3 month AI Engineer roadmap follow kar raha hoon.
 | Day 16 | Neural Network Training — Loss Curves, Epochs Tuning | ✅ |
 | Day 17 | LLM API — Groq + LLaMA — Ecommerce Chatbot | ✅ |
 | Day 18 | RAG — PakShop Knowledge Base Chatbot | ✅ |
+| Day 19 | FastAPI — Backend API Server | ✅ |
+| Day 20 | Full Stack AI Chatbot — FastAPI + React + Groq | ✅ |
 
 ## Tools Used
 Python | Pandas | NumPy | Matplotlib | VS Code | Jupyter
@@ -54,3 +56,7 @@ Python | Pandas | NumPy | Matplotlib | VS Code | Jupyter
 - **Loan Approval Predictor** — PyTorch Neural Network, BCELoss, Adam Optimizer
 - **Pakistan Ecommerce Chatbot** — Groq API, LLaMA 3.1, Multi-turn conversation
 - **PakShop RAG Chatbot** — Custom knowledge base, Urdu responses, Out-of-scope handling
+- **FastAPI Backend** — REST API, GET/POST endpoints, 
+  Swagger docs, CORS, Groq integration
+- **PakShop AI Chatbot** — React frontend, FastAPI backend,
+  Groq LLaMA 3.1, Full stack integration, Urdu responses
