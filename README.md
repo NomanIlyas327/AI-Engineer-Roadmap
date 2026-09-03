@@ -29,9 +29,11 @@ BSCS graduate — 3 month AI Engineer roadmap follow kar raha hoon.
 | Day 18 | RAG — PakShop Knowledge Base Chatbot | ✅ |
 | Day 19 | FastAPI — Backend API Server | ✅ |
 | Day 20 | Full Stack AI Chatbot — FastAPI + React + Groq | ✅ |
+| Day 21 | Week 3 Capstone — PakShop AI Chatbot | ✅ |
+| Day 22 | LangChain — Conversation Memory, Multi-session | ✅ |
 
 ## Tools Used
-Python | Pandas | NumPy | Matplotlib | VS Code | Jupyter
+Python | Pandas | NumPy | Matplotlib | VS Code | Jupyter | Groq | Stream
 
 
 ## Week 1 Complete! ✅
@@ -60,3 +62,4 @@ Python | Pandas | NumPy | Matplotlib | VS Code | Jupyter
   Swagger docs, CORS, Groq integration
 - **PakShop AI Chatbot** — React frontend, FastAPI backend,
   Groq LLaMA 3.1, Full stack integration, Urdu responses
+## Week 4 !

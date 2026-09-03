@@ -1,22 +1,39 @@
-from fastapi import FastAPI
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
-import os
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 from ai_core import get_ai_response
+import traceback
 
-app = FastAPI()
+app = FastAPI(title="PakShop AI Assistant API")
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+class ChatRequest(BaseModel):
+    message: str
+
+@app.get("/")
+def home():
+    return {"status": "Backend running successfully"}
+
+@app.post("/chat")
 @app.post("/api/chat")
-def chat(data: dict):
-    reply = get_ai_response(data.get("message", ""))
-    return {"reply": reply}
+def chat_endpoint(request: ChatRequest):
+    try:
+        reply = get_ai_response(request.message)
+        return {"response": reply, "reply": reply}
+    except Exception as e:
+        # Exact error terminal par print hoga
+        print("\n--- ERROR DETAILS START ---")
+        traceback.print_exc()
+        print("--- ERROR DETAILS END ---\n")
+        raise HTTPException(status_code=500, detail=str(e))
 
-# Frontend Static Files Serve Karna
-frontend_dist = os.path.join(os.path.dirname(__file__), "../frontend/dist")
-
-if os.path.exists(frontend_dist):
-    app.mount("/assets", StaticFiles(directory=os.path.join(frontend_dist, "assets")), name="assets")
-
-    @app.get("/{full_path:path}")
-    def serve_react(full_path: str):
-        return FileResponse(os.path.join(frontend_dist, "index.html"))
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)

@@ -1,30 +1,22 @@
 import os
 from groq import Groq
+from dotenv import load_dotenv
 
-# Apni Groq API key yahan rakhein
-GROQ_API_KEY = ""  # Apni Groq API Key yahan paste karein
+# Path specify kiye bina automatic load karein
+load_dotenv()
 
-client = Groq(api_key=GROQ_API_KEY)
+def get_ai_response(user_message: str) -> str:
+    api_key = os.getenv("GROQ_API_KEY")
+    if not api_key:
+        raise ValueError("GROQ_API_KEY Missing! Check backend/.env file.")
 
-def get_ai_response(user_prompt: str) -> str:
-    system_prompt = (
-        "You are PakShop AI Assistant. "
-        "Strict Guidelines:\n"
-        "1. Always reply in Roman Urdu (Urdu written in Latin script, e.g., 'Aap kaise hain?'). "
-        "   NEVER use Hindi/Devanagari script or pure Arabic/Urdu script.\n"
-        "2. Do NOT use HTML tags like <br>, <div>, or horizontal rules like '---'.\n"
-        "3. Keep responses clean, concise, helpful, and natural."
+    client = Groq(api_key=api_key)
+
+    response = client.chat.completions.create(
+        model="openai/gpt-oss-20b",
+        messages=[
+            {"role": "system", "content": "You are PakShop AI Assistant."},
+            {"role": "user", "content": user_message}
+        ]
     )
-    try:
-        response = client.chat.completions.create(
-            model="openai/gpt-oss-120b",
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_prompt}
-            ],
-            temperature=0.7,
-            max_tokens=1024,
-        )
-        return response.choices[0].message.content
-    except Exception as e:
-        return f"Error: {str(e)}"
+    return response.choices[0].message.content
