@@ -31,6 +31,7 @@ BSCS graduate — 3 month AI Engineer roadmap follow kar raha hoon.
 | Day 20 | Full Stack AI Chatbot — FastAPI + React + Groq | ✅ |
 | Day 21 | Week 3 Capstone — PakShop AI Chatbot | ✅ |
 | Day 22 | LangChain — Conversation Memory, Multi-session | ✅ |
+| Day 23 | LangChain RAG — Document QA System | ✅ |
 
 ## Tools Used
 Python | Pandas | NumPy | Matplotlib | VS Code | Jupyter | Groq | Stream
